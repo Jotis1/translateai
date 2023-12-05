@@ -73,6 +73,11 @@ export default function Page() {
         )
         }
       </form>
+      {state?.response.ok === false && (
+        <section className='rounded-lg absolute bottom-5 right-1/2 translate-x-1/2 py-2.5 px-5 bg-red-200 border-2 border-red-400 text-red-950'>
+          <p>Ha ocurrido un error: {state.response.message}</p>
+        </section>
+      )}
     </main >
   );
 }

@@ -69,11 +69,10 @@ export default async function TranslateFile(prevState: any, e: any) {
             }
         };
     } catch (err: any) {
-        console.log(err);
         return {
             response: {
                 ok: false,
-                message: "Ha ocurrido un error",
+                message: err.message,
                 file: null
             }
         };
