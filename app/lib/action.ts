@@ -76,3 +76,19 @@ export default async function TranslateFile(prevState: any, e: any) {
         };
     }
 }
+
+export async function AuthUser(prevState: any, e: any) {
+    try {
+        const name = e.get("name");
+        const password = e.get("password");
+
+        if ((name !== process.env.USER_NAME) || (password !== process.env.USER_PASSWORD)) {
+            return false
+        } else {
+            return true
+        }
+
+    } catch (error: any) {
+        return error.message
+    }
+}
