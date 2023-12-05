@@ -47,10 +47,12 @@ async function Transcript({ audioBlob }: { audioBlob: PutBlobResult }) {
     return Buffer.from(await mp3.arrayBuffer());
 }
 
-export default async function TranslateFile(prevState: any, e: FormData) {
+export default async function TranslateFile(prevState: any, e: any) {
     try {
 
-        const file = e.get('file') as File;
+        const file = e.get('file');
+        if (file === null) throw new Error("El archivo es null");
+
         const blob = await put(file.name, file, { access: 'public' });
 
         const mp3Buffer = await Transcript({ audioBlob: blob });
