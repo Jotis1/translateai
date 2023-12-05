@@ -1,7 +1,7 @@
 const fs = require("fs");
 const OpenAI = require("openai");
 
-const openai = new OpenAI({ apiKey: "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" });
+const openai = new OpenAI({ apiKey: "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" });
 
 async function main() {
     const transcription = await openai.audio.transcriptions.create({
