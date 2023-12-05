@@ -57,15 +57,13 @@ export default async function TranslateFile(prevState: any, e: any) {
 
         const mp3Buffer = await Transcript({ audioBlob: blob });
 
-        const mp3Blob = await put('output.mp3', mp3Buffer, { access: 'public' });
-
-        console.log(mp3Blob);
+        const mp3Blob = await put('translateIA-output.mp3', mp3Buffer, { access: 'public' });
 
         return {
             response: {
                 ok: true,
                 message: "Archivo pusheado con éxito",
-                file: { name: "output.mp3", url: "https://bmltirehqochqjpq.public.blob.vercel-storage.com/output-ULJmQ8YQII145MiS9OlrBWqA1eTcxb.mp3" }
+                file: { name: "translateIA-output.mp3", url: mp3Blob.url }
             }
         };
     } catch (err: any) {
