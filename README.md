@@ -4,7 +4,7 @@ TranslateAI is a NextJS project that serves as a Single Page Application (SPA). 
 
 ### Usage
 
-1. Clone this repository on your own workspace
+1. Clone this repository on your own workspace (or simply download the release)
 2. Install all dependencies
 ```cmd
 npm install
